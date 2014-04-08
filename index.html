@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Mask</title>
+  <style>
+  
+  html,
+  body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  h1{
+    color: white;
+    letter-spacing: -0.05em;
+    font-size: 15vw;
+    margin: 0;
+    text-align: center;
+    padding-top: 1em;
+    outline: none;
+    -webkit-mask: url(car-mask.png) center top no-repeat;
+    -webkit-mask-size: 100%;
+  }
+
+  header{
+    width: 100vw;
+    background-size: 100%;
+    height: 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url(car-image-s.jpg);
+  }
+
+  header::before{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 1em;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5em 0.75em;
+    content: "S";
+    opacity: 0.75;
+  }
+
+  @media screen and (min-width: 30rem){
+    header{
+      background-image: url(car-image-m.jpg);
+    }
+    header::before{
+      content: "M"
+    }
+  }
+
+  @media screen and (min-width: 50rem){
+    header{
+      background-image: url(car-image-l.jpg);
+    }
+    header::before{
+      content: "L"
+    }
+  }
+
+  @media screen and (min-width: 80rem){
+    header{
+      background-image: url(car-image-xl.jpg);
+    }
+
+    header::before{
+      content: "XL"
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 contenteditable>California</h1>
+  </header>
+</body>
+</html>
